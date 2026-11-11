@@ -3,6 +3,7 @@
 [简体中文](README.md) | [English](README_EN.md)
 
 <p align="center"><img src="assets/cover-en.png" alt="Bilingual Prose Craft cover: edit Chinese and English prose while keeping meaning and voice" width="100%" /></p>
+<p align="center"><sub>AI-generated cover illustration.</sub></p>
 
 **Polish or review Chinese and English writing while preserving its meaning, facts, and voice.**
 
@@ -50,6 +51,7 @@ The references include **26 English writing cues** and **31 Chinese-specific the
 These are **illustrative examples**, not records of a model run or a claim that every text should be edited this way.
 
 ![Workflow diagram: provide a draft and context, choose an editing mode, then review against the original](assets/how-it-works-en.png)
+<p align="center"><sub>AI-generated workflow illustration, not a product screenshot.</sub></p>
 
 **Chinese**
 

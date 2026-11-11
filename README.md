@@ -3,6 +3,7 @@
 [简体中文](README.md) | [English](README_EN.md)
 
 <p align="center"><img src="assets/cover-zh.png" alt="Bilingual Prose Craft 中文封面：润色中英文文稿，保留原意与语气" width="100%" /></p>
+<p align="center"><sub>AI 生成的封面插画。</sub></p>
 
 **帮你润色或审阅中文、英文文本，在表达更清楚的同时保留原意、事实和写作语气。**
 
@@ -50,6 +51,7 @@
 下面是为说明用途而编写的**示意例子**，不是一次模型运行记录，也不代表每篇文章都应这样修改。
 
 ![工作流程示意：输入稿件与任务说明，选择编辑模式，再对照原文复核](assets/how-it-works-zh.png)
+<p align="center"><sub>AI 生成的流程示意图，不是实际产品界面。</sub></p>
 
 **中文**
 
