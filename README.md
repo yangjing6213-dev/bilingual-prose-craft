@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | [English](README_EN.md)
 
+<p align="center"><img src="assets/cover-zh.png" alt="Bilingual Prose Craft 中文封面：润色中英文文稿，保留原意与语气" width="100%" /></p>
+
 **帮你润色或审阅中文、英文文本，在表达更清楚的同时保留原意、事实和写作语气。**
 
 它是一套让 AI 按照特定方法完成任务的操作指南，需要配合支持它的工具使用。Bilingual Prose Craft 是一份 Agent Skill，由 Markdown 指令和参考文件组成，不是独立软件，也不自带 AI 模型。
@@ -46,6 +48,8 @@
 ## 2. 先看效果
 
 下面是为说明用途而编写的**示意例子**，不是一次模型运行记录，也不代表每篇文章都应这样修改。
+
+![工作流程示意：输入稿件与任务说明，选择编辑模式，再对照原文复核](assets/how-it-works-zh.png)
 
 **中文**
 

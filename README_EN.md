@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | [English](README_EN.md)
 
+<p align="center"><img src="assets/cover-en.png" alt="Bilingual Prose Craft cover: edit Chinese and English prose while keeping meaning and voice" width="100%" /></p>
+
 **Polish or review Chinese and English writing while preserving its meaning, facts, and voice.**
 
 Bilingual Prose Craft is an Agent Skill: a set of Markdown instructions and reference files for compatible AI tools. It is not standalone software and does not include an AI model.
@@ -46,6 +48,8 @@ The references include **26 English writing cues** and **31 Chinese-specific the
 ## 2. See examples
 
 These are **illustrative examples**, not records of a model run or a claim that every text should be edited this way.
+
+![Workflow diagram: provide a draft and context, choose an editing mode, then review against the original](assets/how-it-works-en.png)
 
 **Chinese**
 
