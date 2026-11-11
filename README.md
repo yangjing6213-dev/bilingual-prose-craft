@@ -1,5 +1,7 @@
 # Bilingual Prose Craft
 
+[简体中文](README.md) | [English](README_EN.md)
+
 **帮你润色或审阅中文、英文文本，在表达更清楚的同时保留原意、事实和写作语气。**
 
 它是一套让 AI 按照特定方法完成任务的操作指南，需要配合支持它的工具使用。Bilingual Prose Craft 是一份 Agent Skill，由 Markdown 指令和参考文件组成，不是独立软件，也不自带 AI 模型。
@@ -59,6 +61,48 @@
 - Example result: “This feature is designed to help users find the information they need faster.”
 - Check: Confirm that the feature, audience, and promised outcome still match the source.
 
+### 四个不同主题的短例子
+
+**自媒体平台文案**
+
+- 原稿：我每天晚上会留十分钟泡杯茶，坐在窗边。这个小习惯让我慢下来，也提醒我别把所有时间都交给工作。找到适合自己的放松方式，可以从一件小事开始。
+- 润色：我每天晚上会泡杯茶，在窗边坐十分钟。它让我慢下来，也提醒我别把时间都交给工作。适合自己的放松方式，可以从一件小事开始。
+
+**产品更新**
+
+- 原稿：本次更新旨在为用户带来更加流畅、便捷的文件查找体验。现在，用户可以按文件名称搜索，也可以根据修改日期筛选结果。
+- 润色：这次更新优化了文件查找。现在可以按文件名搜索，也可以按修改日期筛选。
+
+**操作说明**
+
+- 原稿：如果你想要进行文件导入，只需在设置页面点击“导入”按钮，选择本地文件并确认，就可以完成导入。
+- 润色：打开设置，点击“导入”，选择本地文件并确认。
+
+**English email**
+
+- Before: “I just wanted to reach out to ask whether we might be able to move Friday's review to 3 p.m., if that would still be convenient for you. Please let me know if this might possibly work.”
+- After: “Could we move Friday's review to 3 p.m.? Let me know if that works for you.”
+
+### 长篇示例：青屿镇一日游
+
+下面是原创示意稿，借鉴上游 [Full example](https://github.com/blader/humanizer/blob/v4.0.0/README.md#full-example) 的“原稿→润色稿”展示方式，不是上游文本翻译，也不是一次真实模型运行。
+
+**原稿**
+
+> 上周六，我和朋友去了青屿镇，开始了一次令人难忘的海边之旅。我们早早到了车站，怀着期待的心情踏上旅程。天气预报说下午可能下雨，所以我们决定先去海边。海边风很大，沙子吹进鞋里；但眼前开阔的景色让人豁然开朗，所有烦恼仿佛都被海风带走了。
+>
+> 中午，我们在老街一家小店吃了鱼丸汤。店面不大，店主十分热情，汤鲜味美，鱼丸 Q 弹，值得一试。这里不仅有美食，还有浓浓的人情味。饭后，我们沿街散步，经过旧码头、杂货铺和一个卖海盐的摊位。
+>
+> 下午果然下起雨，我们躲进车站旁的咖啡店，点了两杯热饮，隔着窗户看雨落在屋檐上。这趟旅行让我明白，放慢脚步才能发现生活中的小确幸。青屿镇不仅是一座小镇，更是一处让人重新找回内心平静的地方。
+
+**润色稿**
+
+> 上周六，我和朋友去了青屿镇。天气预报说下午可能下雨，我们早早到车站后先去了海边。风很大，沙子吹进鞋里；开阔的海景让我觉得轻松了些。
+>
+> 中午我们在老街一家小店吃鱼丸汤。店面不大，店主很热情，鱼丸有弹性，汤也鲜。饭后我们经过旧码头、杂货铺和一个卖海盐的摊位。
+>
+> 下午下雨了，我们到车站旁的咖啡店点了两杯热饮，隔着窗看雨落在屋檐上。这趟旅行让我愿意慢下来。青屿镇给我留下的印象，是海边的风、老街的小店和屋檐上的雨。
+
 <a id="fit"></a>
 ## 3. 适合谁用？
 
@@ -67,6 +111,7 @@
 - 正在修改中文或英文初稿，希望表达更直接、自然的 AI 用户和创作者。
 - 要处理产品文案、文章、邮件或说明文档，并且需要保留原有事实与语气的人。
 - 想让 AI 先指出问题、暂时不改稿，或按指定方式输出修改结果的人。
+- 适用于润色 AI 生成的自媒体平台文案，减少模板化表达，让文字更贴近作者语气；这不代表识别作者身份，也不保证规避 AI 检测。
 
 ### 不适合或需要先准备
 
@@ -94,26 +139,46 @@ node --version
 
 ### 安装与启用
 
-1. 打开你希望使用此 Skill 的项目目录。
-2. 运行以下命令，将它安装到 Codex：
+用 Skills CLI 安装时，指定目标 Agent 为 Codex。想让它只在当前项目可用，请先进入项目目录，再运行：
 
 ~~~sh
-npx skills add yangjing6213-dev/bilingual-prose-craft --skill bilingual-prose-craft -a codex
+npx skills add yangjing6213-dev/bilingual-prose-craft --skill bilingual-prose-craft --agent codex
 ~~~
 
-3. 按终端提示确认安装范围和方式。默认是当前项目；如希望用于自己的所有项目，在命令后加 -g。如果 Windows 不允许创建符号链接，可在安装提示中选择复制文件。
-4. 查看安装结果：
+若要在当前 Windows 用户的所有项目中使用，运行全局安装命令：
 
 ~~~sh
-npx skills list
+npx skills add yangjing6213-dev/bilingual-prose-craft --skill bilingual-prose-craft --agent codex --global
 ~~~
 
-列表中出现 bilingual-prose-craft 表示 CLI 已找到该 Skill。然后在 Codex 中开始新对话，或按所用工具的说明刷新 Skill 列表。
+按终端提示确认安装方式。Windows 不支持符号链接时，可选择复制文件。查看全局安装结果：
+
+~~~sh
+npx skills ls -g
+~~~
+
+列表中出现 bilingual-prose-craft 表示 CLI 已找到该 Skill。随后在 Codex 中开始新会话。
+
+#### 让 Codex 在文案任务中自动选择此 Skill
+
+全局安装后，可将下面的内容加入 Codex 的全局指令。Windows 用户可在文件资源管理器地址栏输入 %USERPROFILE%/.codex，打开或新建 AGENTS.md 并粘贴。若该文件夹里已有 AGENTS.override.md，应把指令加到这个优先文件中。保存后开始新会话。此设置会提示 Codex 在匹配的任务中调用已安装的 Skill；它不会让不支持 Agent Skills 的工具自动获得该能力。
+
+~~~text
+当我让你撰写、改写或润色中文或英文文案、文章、邮件、产品介绍或社交媒体内容时，优先调用已安装的 bilingual-prose-craft Skill。
+
+- 有现成稿件：保留事实、原意、确定程度和作者语气，再进行润色。
+- 从零写稿：只根据我提供的信息起草，再按该 Skill 自检；缺少事实时先询问或标出待补内容。
+- 默认只返回最终稿，除非我要求诊断、解释或多个版本。
+- 只在文案创作和编辑时使用；不要用于事实核查、翻译、判断文本是否由 AI 写成或规避 AI 检测。
+- 如果 Skill 未加载，说明这一点，并按以上保真要求继续。
+~~~
+
+Skills CLI 的安装选项见[官方命令说明](https://github.com/vercel-labs/skills/blob/main/docs/commands.md#skills-add)；Codex 全局指令的配置方式见[官方文档](https://developers.openai.com/codex/guides/agents-md)。
 
 如果要手动安装到 Codex，把整个 [skills/bilingual-prose-craft](skills/bilingual-prose-craft) 文件夹复制到：
 
-- 当前项目：<code>&lt;项目目录&gt;/.agents/skills/bilingual-prose-craft/</code>
-- 当前 Windows 用户：<code>%USERPROFILE%\.agents\skills\bilingual-prose-craft\</code>
+- 当前项目：项目目录下的 .agents/skills/bilingual-prose-craft/ 子目录
+- 当前 Windows 用户：%USERPROFILE%\\.agents\\skills\\bilingual-prose-craft\\
 
 不要只复制 SKILL.md；references/ 中的中英文检查线索也是 Skill 的一部分。Codex 的目录说明见[官方文档](https://developers.openai.com/api/reference/cli)。
 
@@ -150,13 +215,13 @@ npx skills list
 
 | 想做什么 | 在命令行中操作 | 如何确认 |
 |---|---|---|
-| 查看已安装的 Skill | <code>npx skills list</code> | 列表中能找到 bilingual-prose-craft |
-| 检查更新 | <code>npx skills check</code> | CLI 显示是否有可用更新 |
-| 更新这个 Skill | <code>npx skills update bilingual-prose-craft</code> | 更新后再用 npx skills list 查看 |
-| 移除项目级安装 | <code>npx skills remove bilingual-prose-craft</code> | 列表中不再出现 |
-| 移除用户级安装 | <code>npx skills remove --global bilingual-prose-craft</code> | 用户级列表中不再出现 |
+| 查看已安装的 Skill | npx skills list | 列表中能找到 bilingual-prose-craft |
+| 检查更新 | npx skills check | CLI 显示是否有可用更新 |
+| 更新这个 Skill | npx skills update bilingual-prose-craft | 更新后再用 npx skills list 查看 |
+| 移除项目级安装 | npx skills remove bilingual-prose-craft | 列表中不再出现 |
+| 移除用户级安装 | npx skills remove --global bilingual-prose-craft | 用户级列表中不再出现 |
 
-文件位置取决于安装范围。Codex 项目级目录是 <code>&lt;项目目录&gt;/.agents/skills/bilingual-prose-craft/</code>；Windows 用户级目录是 <code>%USERPROFILE%\.agents\skills\bilingual-prose-craft\</code>。通常不需要修改其中的文件。要检查具体安装情况，以 npx skills list 和工具自身的目录说明为准。
+文件位置取决于安装范围。Codex 项目级目录位于项目目录下的 .agents/skills/bilingual-prose-craft/；Windows 用户级目录是 %USERPROFILE%\\.agents\\skills\\bilingual-prose-craft\\。通常不需要修改其中的文件。要检查具体安装情况，以 npx skills list 和工具自身的目录说明为准。
 
 <a id="safety"></a>
 ## 7. 安全性与卸载
@@ -206,6 +271,37 @@ npx skills remove --global bilingual-prose-craft
 ### 使用会不会产生费用？
 
 仓库中的内容是 Markdown 文件，没有自带 AI 模型。模型或服务费用由你选择的 AI 工具和服务商决定。
+
+### 这个 Skill 按什么原理检查文本？
+
+它把常见写作线索当作上下文提示，不把词语或标点当成判断作者身份的依据。英文参考的 26 项沿用 A—F 分类；前五项是较明确的结构线索，单个弱线索则需结合重复、别扭程度、读者和作者样本判断。下面是各类线索的中文概括；详细操作仍以仓库中的中英文参考文件为准。
+
+| 分类 | 检查范围 |
+|---|---|
+| A：铺垫代替陈述（1—5） | 为强调而否定对比、重复或戏剧化收尾、伪深度格言、起跑式铺垫、回应不存在的异议 |
+| B：公式化节奏（6—11） | 强凑三项、重复句首、破折号作万能连接、限定词堆叠、过度使用连字符、被动句或缺少主语 |
+| C：拔高与借用权威（12—18） | 套用高频 AI 词、拔高意义、模糊关联、空泛补充、宣传语代替事实、借权威背书、绕开普通动词 |
+| D：公式化排版（19—21） | 装饰性粗体、装饰性标题、与目标格式不一致的引号 |
+| E：聊天与草稿残留（22—25） | 客服式套话、重复免责与猜测、首句重复标题、叙述文档或写作过程 |
+| F：读者背景与中文补充检查（26、27—32） | 复述读者已经知道的背景，以及六类中文表达线索；上下文不足时保留必要说明 |
+
+中文版还增加六类表达检查：多层“的”连续修饰、“进行 + 动词”、连续堆叠“被”字句、同义四字词排比、没有信息的“随着……发展”开头、套话式收尾。因此中文参考文件共含 31 个中文主题和 1 项共享的读者上下文检查。
+
+### 编辑时遵循哪些原则？
+
+1. 优先保留信息和确定程度，再遵守用户给定的范围与文本要求，匹配作者语气，最后处理具体表达问题。
+2. 不新增功能、数据、来源、人物身份或第一人称经历；不把“可能”改成“确定”，也不把“计划”改成“已经完成”。
+3. 保留否定、条件、归因、范围、时间和完成状态，以及句子之间真实的因果关系。
+4. 三项列表、四字格、被动句、破折号和引号都可能有用；不因形式本身就删除。
+5. 保留个人表达、学术和商务文本的正式程度；中英混排时默认不翻译。
+6. 编辑文件时保留代码、命令、路径、链接目标、YAML、数据、标题和锚点；若调整标题或结构，检查引用它们的链接。
+7. 默认只交付最终稿，不要求展示中间草稿、命中清单或自评分数。
+
+以上原则和检查分类参考了 [blader/humanizer 的 26 项写作线索](https://github.com/blader/humanizer/blob/v4.0.0/README.md#the-26-patterns)。本项目保留其 MIT 来源声明，见 [第三方版权声明](THIRD_PARTY_NOTICES.md)。
+
+### 为什么 README 显示的字体不是微软雅黑？
+
+GitHub 按自己的页面样式呈现 Markdown，仓库无法可靠指定每位访客设备上的字体。本 README 已统一正文标记，说明文字不额外使用字体标签，命令示例仍放在便于复制的代码块中。本地浏览器是否使用微软雅黑由设备和浏览器设置决定。GitHub 的 Markdown 格式说明见[官方文档](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)。
 
 <a id="version"></a>
 ## 9. 版本与许可
